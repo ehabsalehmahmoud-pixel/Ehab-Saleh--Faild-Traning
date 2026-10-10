@@ -1,0 +1,30 @@
+/* =========================================================
+   Edit page — page-specific touches only.
+   Colours, navbar and keyframes come from index.css.
+   ========================================================= */
+
+.fa-user-pen {
+  display: inline-block;
+  animation: floaty 3.2s ease-in-out infinite;
+}
+
+.fa-star {
+  display: inline-block;
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+.card-body .input-group {
+  transition: transform 0.3s var(--sms-ease);
+}
+
+.card-body .input-group:focus-within {
+  transform: translateY(-2px);
+}
+
+.card-body .input-group:focus-within .input-group-text {
+  background-color: var(--bs-primary-bg-subtle) !important;
+}
+
+.card-body .input-group:focus-within .form-control {
+  border-color: #6366f1;
+}

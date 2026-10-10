@@ -1,0 +1,318 @@
+/* =========================================================
+   Shared theme — loaded by every page (index, search, edit)
+   Indigo accent taken from search.css so all pages match.
+   ========================================================= */
+
+:root {
+  /* Bootstrap palette: utilities (text-primary, bg-primary-subtle, focus rings) read these */
+  --bs-primary: #6366f1;
+  --bs-primary-rgb: 99, 102, 241;
+  --bs-primary-bg-subtle: #eef2ff;
+  --bs-primary-border-subtle: #c7d2fe;
+  --bs-primary-text-emphasis: #4338ca;
+
+  /* Project tokens */
+  --sms-bg: #f4f7fb;
+  --sms-text: #1e293b;
+  --sms-muted: #64748b;
+  --sms-border: #e2e8f0;
+  --sms-accent: #6366f1;
+  --sms-accent-strong: #4f46e5;
+  --sms-accent-deep: #4338ca;
+  --sms-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+body {
+  background-color: var(--sms-bg);
+  color: var(--sms-text);
+}
+
+body.bg-light {
+  background-color: var(--sms-bg) !important;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sms-border) !important;
+  animation: slideDown 0.6s var(--sms-ease) backwards;
+}
+
+.navbar-brand > span:first-child {
+  background: linear-gradient(135deg, #818cf8, #4f46e5) !important;
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.35);
+  transition: transform 0.4s var(--sms-ease);
+}
+
+.navbar-brand:hover > span:first-child {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.navbar a.btn {
+  transition: transform 0.25s var(--sms-ease), background-color 0.25s,
+              color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.navbar a.btn:hover {
+  background-color: var(--sms-accent) !important;
+  border-color: var(--sms-accent) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+}
+
+.navbar a.btn i {
+  display: inline-block;
+  transition: transform 0.35s var(--sms-ease);
+}
+
+.navbar a.btn:hover i {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  animation: fadeUp 0.6s var(--sms-ease) backwards;
+}
+
+.col-lg-8 > .card {
+  animation-delay: 0.12s;
+}
+
+/* ---------- Tables ---------- */
+
+.table {
+  --bs-table-hover-bg: #f5f3ff;
+}
+
+thead.table-light {
+  --bs-table-bg: #f8fafc;
+  color: var(--sms-muted);
+}
+
+tbody tr {
+  animation: rowIn 0.5s var(--sms-ease) backwards;
+  transition: background-color 0.2s;
+}
+
+tbody tr:nth-child(1)  { animation-delay: 0.10s; }
+tbody tr:nth-child(2)  { animation-delay: 0.15s; }
+tbody tr:nth-child(3)  { animation-delay: 0.20s; }
+tbody tr:nth-child(4)  { animation-delay: 0.25s; }
+tbody tr:nth-child(5)  { animation-delay: 0.30s; }
+tbody tr:nth-child(6)  { animation-delay: 0.35s; }
+tbody tr:nth-child(7)  { animation-delay: 0.40s; }
+tbody tr:nth-child(8)  { animation-delay: 0.45s; }
+tbody tr:nth-child(9)  { animation-delay: 0.50s; }
+tbody tr:nth-child(10) { animation-delay: 0.55s; }
+
+/* Status / score pills */
+.badge.rounded-pill {
+  animation: popIn 0.5s var(--sms-ease) backwards;
+  transition: transform 0.2s var(--sms-ease), box-shadow 0.2s;
+}
+
+.badge.rounded-pill:hover {
+  transform: scale(1.08);
+}
+
+/*
+  Status colours are set inline by the PHP (style="background-color: ...").
+  They are restyled here with !important so the PHP files stay untouched.
+*/
+.badge[style*="background-color: red"] {
+  background: linear-gradient(135deg, #fb7185, #e11d48) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+}
+
+.badge[style*="background-color: yellow"] {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  box-shadow: inset 0 0 0 1px #fcd34d;
+}
+
+.badge[style*="background-color: blue"] {
+  background: linear-gradient(135deg, #60a5fa, #2563eb) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.badge[style*="background-color: orange"] {
+  background: linear-gradient(135deg, #fbbf24, #f97316) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+}
+
+.badge[style*="background-color: green"] {
+  background: linear-gradient(135deg, #34d399, #059669) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  transition: transform 0.25s var(--sms-ease), box-shadow 0.25s,
+              background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn i {
+  display: inline-block;
+  transition: transform 0.3s var(--sms-ease);
+}
+
+.btn:hover i {
+  transform: scale(1.15);
+}
+
+.btn-primary {
+  --bs-btn-bg: #6366f1;
+  --bs-btn-border-color: #6366f1;
+  --bs-btn-hover-bg: #4f46e5;
+  --bs-btn-hover-border-color: #4f46e5;
+  --bs-btn-active-bg: #4338ca;
+  --bs-btn-active-border-color: #4338ca;
+  --bs-btn-focus-shadow-rgb: 99, 102, 241;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 26px rgba(99, 102, 241, 0.4);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #6366f1;
+  --bs-btn-border-color: #6366f1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #6366f1;
+  --bs-btn-hover-border-color: #6366f1;
+  --bs-btn-active-bg: #4f46e5;
+  --bs-btn-active-border-color: #4f46e5;
+  --bs-btn-focus-shadow-rgb: 99, 102, 241;
+}
+
+.btn-outline-primary:hover {
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.25);
+}
+
+.btn-outline-danger {
+  --bs-btn-color: #e11d48;
+  --bs-btn-border-color: #fda4af;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #e11d48;
+  --bs-btn-hover-border-color: #e11d48;
+  --bs-btn-active-bg: #be123c;
+  --bs-btn-active-border-color: #be123c;
+  --bs-btn-focus-shadow-rgb: 225, 29, 72;
+}
+
+.btn-outline-danger:hover {
+  box-shadow: 0 8px 18px rgba(225, 29, 72, 0.25);
+}
+
+.btn-outline-danger:hover .fa-trash {
+  animation: wiggle 0.5s ease;
+}
+
+/* ---------- Inputs & alerts ---------- */
+
+.form-control {
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.input-group-text {
+  transition: background-color 0.25s;
+}
+
+.alert {
+  border: 0;
+  border-radius: 12px;
+  animation: slideDown 0.45s var(--sms-ease) backwards;
+}
+
+.alert-info {
+  --bs-alert-bg: #e0e7ff;
+  --bs-alert-color: #3730a3;
+  --bs-alert-border-color: transparent;
+}
+
+.alert-primary {
+  --bs-alert-bg: #eef2ff;
+  --bs-alert-color: #4338ca;
+  --bs-alert-border-color: transparent;
+}
+
+/* ---------- Floating / idle icons ---------- */
+
+.fa-user-plus {
+  animation: floaty 3s ease-in-out infinite;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rowIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.6); }
+  70%  { opacity: 1; transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.18) rotate(-8deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-12deg); }
+  75%      { transform: rotate(12deg); }
+}
+
+/* ---------- Respect "reduce motion" settings ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
